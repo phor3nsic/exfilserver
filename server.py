@@ -3,11 +3,12 @@ import os, telegram, argparse
 
 parser = argparse.ArgumentParser(add_help=True)
 parser.add_argument("-p", "--port", help="port serv", required=True)
+parser.add_argument("-f", "--folder", help="Folder of save uploads")
 parser.add_argument("-tu", "--user", help="User of telegram")
 parser.add_argument("-tt", "--token", help="Token of telegram")
 args = parser.parse_args()
 
-UPLOAD_FOLDER = "./files"
+UPLOAD_FOLDER = args.folder
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
