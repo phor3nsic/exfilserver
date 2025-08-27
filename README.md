@@ -4,7 +4,8 @@
 
 ### Run in you host:
 
-```
+```sh
+pip install Flask \
 python3 server.py -p 80 -f /tmp/files
 ```
 
